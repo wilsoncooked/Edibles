@@ -1,1 +1,67 @@
-<p>new-recipe works!</p>
+<Form [formGroup]="myForm">
+  Value: {{ myForm.value | json }}
+  <hr />
+
+  <mat-form-field class="full">
+    <input matInput placeholder="title" formControlName="title" />
+  </mat-form-field>
+
+  <div formArrayName="ingredients">
+    <div
+      *ngFor="let recipe of ingredientForms.controls; let i = index"
+      [formGroupName]="i"
+    >
+      <mat-form-field>
+        <input matInput placeholder="name" formControlName="name" />
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="amount" formControlName="amount" />
+      </mat-form-field>
+      <button mat-raised-button color="warn" (click)="deleteIngredient(i)">
+        Delete
+      </button>
+    </div>
+  </div>
+
+  <button mat-raised-button color="primary" (click)="addIngredient()">
+    New Ingredient
+  </button>
+
+  <div formArrayName="method">
+    <div
+      *ngFor="let method of methodForms.controls; let i = index"
+      [formGroupName]="i"
+    >
+      <mat-form-field>
+        <input matInput placeholder="step" formControlName="step" />
+      </mat-form-field>
+
+      <button mat-raised-button color="warn" (click)="deleteMethod(i)">
+        Delete
+      </button>
+    </div>
+  </div>
+
+  <button mat-raised-button color="primary" (click)="addMethod()">
+    New Method
+  </button>
+
+  <div formArrayName="notes">
+    <div
+      *ngFor="let note of notesForms.controls; let i = index"
+      [formGroupName]="i"
+    >
+      <mat-form-field>
+        <input matInput placeholder="Note" formControlName="sideNote" />
+      </mat-form-field>
+
+      <button mat-raised-button color="warn" (click)="deleteNote(i)">
+        Delete
+      </button>
+    </div>
+  </div>
+
+  <button mat-raised-button color="primary" (click)="addNote()">
+    New Note
+  </button>
+</Form>
