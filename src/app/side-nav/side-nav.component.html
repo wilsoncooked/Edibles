@@ -1,0 +1,11 @@
+<mat-sidenav-container>
+  <mat-sidenav mode="side" [(opened)]="opened">
+    <a routerLink="" (click)="opened = !opened">Home</a>
+    <a routerLink="login" (click)="opened = !opened">Login</a>
+    <a routerLink="list" (click)="opened = !opened">List</a>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <button mat-stroked-button (click)="opened = !opened">button</button>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

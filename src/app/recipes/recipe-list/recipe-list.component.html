@@ -1,0 +1,8 @@
+<mat-nav-list>
+  <mat-list-item *ngFor="let recipe of recipes$ | async">
+    <a matLine routerLink="../{{ recipe.id }}/view">{{ recipe.title }}</a>
+    <button mat-icon-button (click)="showInfo(recipe)">
+      <mat-icon>info</mat-icon>
+    </button>
+  </mat-list-item>
+</mat-nav-list>
