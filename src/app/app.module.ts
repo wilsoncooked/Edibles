@@ -14,7 +14,6 @@ import { SideNavComponent } from './side-nav/side-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MaterialModule } from './material/material.module';
 
-
 @NgModule({
   declarations: [
     AppComponent,

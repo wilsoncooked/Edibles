@@ -10,3 +10,8 @@ mat-sidenav {
   background-color: pink;
   width: 200px;
 }
+
+.side-nav-links {
+  display: flex;
+  flex-direction: column;
+}

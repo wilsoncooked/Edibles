@@ -7,19 +7,4 @@ import { Component } from '@angular/core';
 })
 export class SideNavComponent {
 
-
-  // isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
-  //   .pipe(
-  //     map(result => result.matches),
-  //     shareReplay()
-  //   );
-
-  log(state) {
-    console.log(state)
-  }
-
-
-
-  // constructor(private breakpointObserver: BreakpointObserver) {}
-
 }
