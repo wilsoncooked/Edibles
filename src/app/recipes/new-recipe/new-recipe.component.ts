@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray } from '@angular/forms'
+import { AngularFirestore } from '@angular/fire/firestore'
+import { tap, first } from 'rxjs/operators'
 
 @Component({
   selector: 'new-recipe',
@@ -10,8 +12,12 @@ export class NewRecipeComponent implements OnInit {
   // ts
   myForm: FormGroup;
 
+  // form state
+  loading = false;
+  success = true;
+
   //private publie = service
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private afs: AngularFirestore) { }
 
   ngOnInit() {
 
@@ -26,7 +32,23 @@ export class NewRecipeComponent implements OnInit {
   this.myForm.valueChanges.subscribe(console.log)
 
   }
-  //getter
+
+  //SUBMIT AND DATABASE
+  async submitHandler() {
+    this.loading = true;
+
+    const formValue = this.myForm.value;
+
+    try {
+      await this.afs.collection('recipes').add(formValue);
+      this.success = true;
+    } catch(err) {
+      console.log(err)
+    }
+    this.loading = false;
+  }
+
+
   //INGREDIENTS
   get ingredientForms() {
     return this.myForm.get('ingredients') as FormArray

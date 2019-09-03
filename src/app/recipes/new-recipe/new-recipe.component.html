@@ -1,4 +1,4 @@
-<Form [formGroup]="myForm">
+<Form [formGroup]="myForm" (ngSubmit)="submitHandler()">
   Value: {{ myForm.value | json }}
   <hr />
 
@@ -64,4 +64,6 @@
   <button mat-raised-button color="primary" (click)="addNote()">
     New Note
   </button>
+
+  <button mat-raised-button color="primary" type="submit">Submit</button>
 </Form>
