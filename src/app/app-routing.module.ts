@@ -5,6 +5,7 @@ import { RecipeViewComponent } from './recipes/recipe-view/recipe-view.component
 import { HomeComponent } from './home-page/home/home.component';
 import { LoginFormComponent } from './auth/login-form/login-form.component'
 import { NewRecipeComponent } from './recipes/new-recipe/new-recipe.component';
+import { FileUploadComponent } from './file-upload/file-upload.component';
 
 const routes: Routes = [
   // { path: '', redirectTo: 'list', pathMatch: 'full' },
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'list', component:RecipeListComponent},
   { path: ':recipeId/view', component:RecipeViewComponent},
   { path: 'login', component:LoginFormComponent},
-  { path: 'new', component:NewRecipeComponent}
+  { path: 'new', component:NewRecipeComponent},
+  { path: 'upload', component:FileUploadComponent},
 ];
 
 @NgModule({
@@ -22,5 +24,5 @@ const routes: Routes = [
 export class AppRoutingModule { }
 
 export const routingComponents = [
-  HomeComponent, RecipeListComponent, RecipeViewComponent, LoginFormComponent, NewRecipeComponent
+  HomeComponent, RecipeListComponent, RecipeViewComponent, LoginFormComponent, NewRecipeComponent, FileUploadComponent
 ]

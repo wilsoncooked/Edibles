@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from '../environments/environment';
 import { SideNavComponent } from './side-nav/side-nav.component';
 
@@ -18,7 +19,7 @@ import { MaterialModule } from './material/material.module';
   declarations: [
     AppComponent,
     routingComponents,
-    SideNavComponent,
+    SideNavComponent
   ],
   imports: [
     BrowserModule,
@@ -27,8 +28,9 @@ import { MaterialModule } from './material/material.module';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule, 
     AngularFirestoreModule,
+    AngularFireStorageModule,
     LayoutModule,
-    MaterialModule
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

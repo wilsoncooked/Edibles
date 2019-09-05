@@ -1,0 +1,11 @@
+<div text-center *ngIf="!isUploading && !isUploaded">
+  <div>
+    <h3>Choose Images to Upload</h3>
+  </div>
+  <div>
+    <div class="fileUpload btn btn-primary">
+      <span>Upload</span>
+      <input type="file" (change)="uploadFile($event)" />
+    </div>
+  </div>
+</div>
